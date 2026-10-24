@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfltkouf17j45"]
+
+[ext_resource type="FontFile" uid="uid://dbe2dg4x7sjou" path="res://resource/品如手写体.ttf" id="1_woucu"]
+[ext_resource type="Script" path="res://START/start_button.gd" id="2_1b578"]
+[ext_resource type="Script" path="res://START/设置.gd" id="2_ubjiy"]
+[ext_resource type="Texture2D" uid="uid://xqt4jtckvgps" path="res://resource/zhishi.png" id="4_mhbq8"]
+[ext_resource type="Texture2D" uid="uid://cepkny43dr8je" path="res://resource/sss.png" id="5_chs84"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0003, 0.991269)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="ColorRect"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.292
+anchor_top = 0.044
+anchor_right = 0.695
+anchor_bottom = 0.459
+offset_left = 0.513824
+offset_top = -0.265383
+offset_right = 0.257751
+offset_bottom = -0.185394
+theme_override_fonts/font = ExtResource("1_woucu")
+theme_override_font_sizes/font_size = 100
+text = "Your    Bin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="设置" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.353
+anchor_top = 0.444
+anchor_right = 0.638
+anchor_bottom = 0.546
+offset_left = 0.220642
+offset_top = -0.201843
+offset_right = -0.0993652
+offset_bottom = -0.297821
+theme_override_fonts/font = ExtResource("1_woucu")
+theme_override_font_sizes/font_size = 50
+text = "设置"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_ubjiy")
+
+[node name="Start" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.352
+anchor_top = 0.576
+anchor_right = 0.64
+anchor_bottom = 0.782
+offset_left = 0.495972
+offset_top = -0.248016
+offset_right = -0.280029
+offset_bottom = 0.263947
+theme_override_fonts/font = ExtResource("1_woucu")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+script = ExtResource("2_1b578")
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 313.906
+offset_top = 326.854
+offset_right = 754.906
+offset_bottom = 660.854
+rotation = -0.49861
+scale = Vector2(0.347497, 0.503791)
+pivot_offset = Vector2(-94.9364, 2.00244)
+texture = ExtResource("4_mhbq8")
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1378.0
+offset_top = 177.0
+offset_right = 1700.0
+offset_bottom = 427.0
+rotation = 0.659285
+scale = Vector2(0.720079, 0.798238)
+texture = ExtResource("5_chs84")
+
+[connection signal="pressed" from="ColorRect/设置" to="ColorRect/设置" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/Start" to="ColorRect/Start" method="_on_pressed"]

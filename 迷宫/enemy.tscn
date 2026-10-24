@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj3j775amxyy4"]
+
+[ext_resource type="Script" path="res://迷宫/enemy.gd" id="1_3opk5"]
+[ext_resource type="Texture2D" uid="uid://7l0akcf7xow3" path="res://icon.svg" id="1_wnjrb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7k28"]
+radius = 40.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3opk5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_n7k28")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wnjrb")
+region_enabled = true
+region_rect = Rect2(4, 3, 120, 120)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="rest" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

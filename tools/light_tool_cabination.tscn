@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7peuc2vh3s2i"]
+
+[ext_resource type="Texture2D" uid="uid://dgt6ukxu55a7r" path="res://resource/background.png" id="1_61few"]
+[ext_resource type="Script" path="res://tools/light_tool_cabination.gd" id="2_l685s"]
+[ext_resource type="FontFile" uid="uid://dbe2dg4x7sjou" path="res://resource/品如手写体.ttf" id="3_tdt8p"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.031
+anchor_bottom = 0.075
+offset_right = 0.479996
+texture = ExtResource("1_61few")
+expand_mode = 1
+script = ExtResource("2_l685s")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.517
+offset_bottom = -0.0200043
+theme_override_fonts/font = ExtResource("3_tdt8p")
+theme_override_font_sizes/font_size = 29
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1

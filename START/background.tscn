@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ha55daici2w"]
+
+[ext_resource type="Texture2D" uid="uid://6lhjbkoa6e4w" path="res://resource/tool_box.png" id="1_23uky"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 286)
+scale = Vector2(13.3, 11.4182)
+texture = ExtResource("1_23uky")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl26d0l1w7ix1"]
+
+[ext_resource type="Script" path="res://tools/box.gd" id="1_gyc7u"]
+[ext_resource type="Texture2D" uid="uid://dymvidkqwrwci" path="res://store_door2.png" id="2_h8ruc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yedr"]
+
+[node name="Box" type="Area2D"]
+script = ExtResource("1_gyc7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0yedr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("2_h8ruc")
+region_enabled = true
+region_rect = Rect2(0, 0, 110, 110)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

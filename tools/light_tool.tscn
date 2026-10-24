@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctuecp8ib1qnm"]
+
+[ext_resource type="Texture2D" uid="uid://c47oh35w0yi50" path="res://resource/char_together.png" id="1_ea6l5"]
+[ext_resource type="Texture2D" uid="uid://b8aarkv3oheka" path="res://resource/2d_lights_and_shadows_neutral_point_light.webp" id="2_rngey"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ea6l5")
+hframes = 3
+vframes = 3
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+color = Color(0.67451, 1, 1, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.8)
+texture = ExtResource("2_rngey")
+texture_scale = 2.79

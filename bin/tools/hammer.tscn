@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgc1bmbkqe5u"]
+
+[ext_resource type="Texture2D" uid="uid://b888x232prwp2" path="res://tools/wall_breaker.png" id="1_2dxwd"]
+[ext_resource type="Script" path="res://tools/hammer.gd" id="2_d5y6u"]
+[ext_resource type="FontFile" uid="uid://dbe2dg4x7sjou" path="res://品如手写体.ttf" id="2_e58v8"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.031
+anchor_bottom = 0.075
+offset_right = 0.479996
+texture = ExtResource("1_2dxwd")
+expand_mode = 1
+script = ExtResource("2_d5y6u")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.517
+offset_bottom = -0.0200043
+theme_override_fonts/font = ExtResource("2_e58v8")
+theme_override_font_sizes/font_size = 29
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1

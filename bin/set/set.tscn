@@ -1,0 +1,274 @@
+[gd_scene load_steps=16 format=3 uid="uid://qvantqllupg5"]
+
+[ext_resource type="FontFile" uid="uid://dbe2dg4x7sjou" path="res://品如手写体.ttf" id="1_0bigr"]
+[ext_resource type="Texture2D" uid="uid://bsxost1g5knei" path="res://panel-border-003.png" id="1_gpnap"]
+[ext_resource type="Script" path="res://set/size_y.gd" id="2_2myrc"]
+[ext_resource type="Script" path="res://set/size_x.gd" id="3_2n25l"]
+[ext_resource type="Script" path="res://set/size_y_up.gd" id="3_rpts5"]
+[ext_resource type="Script" path="res://set/size_x_button.gd" id="4_6h5rx"]
+[ext_resource type="Script" path="res://set/size_y_down.gd" id="4_kcqbp"]
+[ext_resource type="Script" path="res://set/size_x_down.gd" id="5_4s242"]
+[ext_resource type="Script" path="res://set/back.gd" id="7_t8j6e"]
+[ext_resource type="Script" path="res://set/Button.gd" id="10_7a06y"]
+[ext_resource type="Script" path="res://set/A.gd" id="10_ynuiw"]
+[ext_resource type="Script" path="res://set/Button2.gd" id="11_bi6li"]
+[ext_resource type="Script" path="res://set/B.gd" id="13_b7ftk"]
+[ext_resource type="Script" path="res://set/ButtonB1.gd" id="14_2ctbf"]
+[ext_resource type="Script" path="res://set/ButtonB2.gd" id="15_6dk8p"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="size" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.195
+anchor_top = 0.218
+anchor_right = 0.335
+anchor_bottom = 0.417
+offset_left = -4.39999
+offset_top = -24.4
+offset_right = 6.79999
+offset_bottom = -54.6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0bigr")
+theme_override_font_sizes/font_size = 60
+text = "迷宫
+大小"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Y" type="Label" parent="ColorRect/size"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.415
+anchor_top = 0.543
+anchor_right = 2.011
+anchor_bottom = 0.93
+offset_left = -6.20001
+offset_top = -0.0470047
+offset_right = -3.08002
+offset_bottom = 0.0299911
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0bigr")
+theme_override_font_sizes/font_size = 25
+text = "Y:20"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_2myrc")
+
+[node name="Button" type="Button" parent="ColorRect/size/Y"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_right = 2.353
+anchor_bottom = 0.3
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("3_rpts5")
+metadata/_edit_lock_ = true
+
+[node name="Button2" type="Button" parent="ColorRect/size/Y"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_top = 0.4
+anchor_right = 2.353
+anchor_bottom = 0.7
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("4_kcqbp")
+metadata/_edit_lock_ = true
+
+[node name="X" type="Label" parent="ColorRect/size"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.415
+anchor_top = 0.07
+anchor_right = 2.019
+anchor_bottom = 0.465
+offset_left = -6.20001
+offset_top = 0.97
+offset_right = -5.32001
+offset_bottom = 0.0149956
+theme_override_fonts/font = ExtResource("1_0bigr")
+theme_override_font_sizes/font_size = 25
+text = "X:20"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_2n25l")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="ColorRect/size/X"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_right = 2.353
+anchor_bottom = 0.3
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("4_6h5rx")
+metadata/_edit_lock_ = true
+
+[node name="Button2" type="Button" parent="ColorRect/size/X"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_top = 0.4
+anchor_right = 2.353
+anchor_bottom = 0.7
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("5_4s242")
+metadata/_edit_lock_ = true
+
+[node name="back" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.921
+anchor_top = 0.083
+anchor_right = 0.957
+anchor_bottom = 0.17
+offset_left = -0.320068
+offset_top = 0.600006
+offset_right = -0.440063
+icon = ExtResource("1_gpnap")
+expand_icon = true
+script = ExtResource("7_t8j6e")
+
+[node name="道具" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.193
+anchor_top = 0.481
+anchor_right = 0.339
+anchor_bottom = 0.719
+offset_left = -0.559998
+offset_top = -4.80002
+offset_right = -0.880005
+offset_bottom = -0.200012
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0bigr")
+theme_override_font_sizes/font_size = 60
+text = "初始
+道具
+数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="A" type="Label" parent="ColorRect/道具"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.393
+anchor_right = 2.0
+anchor_bottom = 0.267
+offset_left = -0.0400085
+offset_bottom = -2.065
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0bigr")
+theme_override_font_sizes/font_size = 25
+text = "A:10"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_ynuiw")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="ColorRect/道具/A"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_right = 2.353
+anchor_bottom = 0.3
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("10_7a06y")
+
+[node name="Button2" type="Button" parent="ColorRect/道具/A"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_top = 0.4
+anchor_right = 2.353
+anchor_bottom = 0.71
+offset_left = -0.0500183
+offset_right = -0.0100403
+offset_bottom = -0.5
+script = ExtResource("11_bi6li")
+
+[node name="B" type="Label" parent="ColorRect/道具"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.393
+anchor_top = 0.256
+anchor_right = 2.0
+anchor_bottom = 0.5
+offset_left = -0.0400085
+offset_top = 0.079998
+offset_bottom = 2.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0bigr")
+theme_override_font_sizes/font_size = 25
+text = "B:2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_b7ftk")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="ColorRect/道具/B"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_right = 2.353
+anchor_bottom = 0.3
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("14_2ctbf")
+
+[node name="Button2" type="Button" parent="ColorRect/道具/B"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.765
+anchor_top = 0.4
+anchor_right = 2.353
+anchor_bottom = 0.7
+offset_left = -0.0500183
+offset_right = -0.0100403
+script = ExtResource("15_6dk8p")
+
+[connection signal="pressed" from="ColorRect/size/Y/Button" to="ColorRect/size/Y/Button" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/size/Y/Button2" to="ColorRect/size/Y/Button2" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/size/X/Button" to="ColorRect/size/X" method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/size/X/Button2" to="ColorRect/size/X" method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/back" to="ColorRect/back" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/道具/A/Button" to="ColorRect/道具/A/Button" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/道具/A/Button2" to="ColorRect/道具/A/Button2" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/道具/B/Button" to="ColorRect/道具/B/Button" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/道具/B/Button2" to="ColorRect/道具/B/Button2" method="_on_pressed"]

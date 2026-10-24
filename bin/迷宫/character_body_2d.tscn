@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://kuksj7txo3ga"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_nfk8e"]
+[ext_resource type="Texture2D" uid="uid://c47oh35w0yi50" path="res://char_together.png" id="2_jloi5"]
+[ext_resource type="Texture2D" uid="uid://b8aarkv3oheka" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_007r8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a7w4"]
+size = Vector2(55, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8rw3"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["char"]]
+platform_wall_layers = 15
+script = ExtResource("1_nfk8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0a7w4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jloi5")
+hframes = 3
+vframes = 3
+region_enabled = true
+region_rect = Rect2(0, 0, 330, 330)
+
+[node name="Timer" type="Timer" parent="CollisionShape2D/Sprite2D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(3.09091, 2.63388)
+color = Color(0.686275, 1, 1, 1)
+energy = 1.8
+shadow_enabled = true
+shadow_color = Color(0.184314, 0.396078, 0.321569, 1)
+shadow_item_cull_mask = 3
+texture = ExtResource("3_007r8")
+offset = Vector2(3, -12)
+texture_scale = 3.56
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_g8rw3")
+
+[connection signal="timeout" from="CollisionShape2D/Sprite2D/Timer" to="." method="_on_timer_timeout"]

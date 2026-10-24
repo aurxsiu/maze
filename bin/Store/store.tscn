@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjqqbio4ed0n1"]
+
+[ext_resource type="Script" path="res://Store/store.gd" id="1_gf5gr"]
+
+[node name="store" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gf5gr")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 44.275
+anchor_bottom = 26.2
+offset_right = -4.0
+offset_bottom = 2.0
+scale = Vector2(0.652993, 0.612975)
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ScrollContainer/Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(269.485, 500.637)
